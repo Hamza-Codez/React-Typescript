@@ -1,13 +1,27 @@
-import React from 'react';
-import './styles.css'
+import React, { FC } from 'react';
+import './styles.css';
 
-const InputField = () => {
+interface Props {
+  todo: string;
+  setTodo: React.Dispatch<React.SetStateAction<string>>;
+  handleAdd: (e: React.FormEvent) => void;
+}
+
+const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
   return (
-    <form className='input'>
-    <input type="input" placeholder='Enter a task' className='input_box'/>
-    <button type="submit" className='border rounded-md bg-slate-300 m-1 px-2'>Go</button>
+    <form className='input' onSubmit={handleAdd}> 
+      <input
+        type="input"
+        placeholder='Enter a task'
+        className='input_box'
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
+      />
+      <button type="submit" className='Input_Submit'>
+        Go
+      </button>
     </form>
-  )
+  );
 }
 
 export default InputField;
