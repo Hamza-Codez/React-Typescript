@@ -1,62 +1,14 @@
 // import { useState } from 'react'
-// import './App.css'
-
-
-
-type Person = {
-  name: string;
-  Age?: number;
-  Address?: string | number;
-}
-let Student: Person = {
-  name: "hhcc",
-}
-console.log(Student.name);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import './App.css'
+import InputField from './Components/InputField'
 
 
 function App() {
 return (
-  <h1 className="text-3xl ">
-  Hello world!
-  </h1>
+  <div className="App">
+  <span className="heading">Taskify</span>
+  <InputField />
+  </div>
   )
 }
 
